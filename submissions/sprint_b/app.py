@@ -17,7 +17,7 @@ def vocabulary():
 
 @app.route('/epithets/<quantity>')
 def quantity(quantity):
-    epithets_quantity = EpithetGenerator.get_quantity_of_epithets(quantity)
+    epithets_quantity = EpithetGenerator.get_quantity_of_epithets(int(quantity))
     return jsonify({'quantity': epithets_quantity})
 
 
