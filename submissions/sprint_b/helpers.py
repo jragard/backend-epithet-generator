@@ -45,9 +45,17 @@ class Vocabulary:
 
 
 class EpithetGenerator:
+    """
+    Helper class to generate epithets from the data.json
+    file in this project's 'resources' directory
+    """
 
     @classmethod
     def get_single_epithet(cls):
+        """
+        Returns a tuple with 1 word from each column in
+        data.json, and the formatting to display a single epithet
+        """
         data = sorted(Vocabulary.from_file('../../resources/data.json'))
         data_keys = sorted(data[1])
 
@@ -60,11 +68,16 @@ class EpithetGenerator:
 
     @classmethod
     def display_single_epithet(cls):
+        """
+        Displays a single epithet from the data
+        returned in the get_single_epithet method
+        """
         epithet_to_display = cls.get_single_epithet()[1]
         return epithet_to_display
 
     @classmethod
     def get_quantity_of_epithets(cls, quantity):
+        """Get a user-specified quantity of epithets"""
         counter = 0
         epithet_list = []
         while counter < quantity:
@@ -76,6 +89,7 @@ class EpithetGenerator:
 
     @classmethod
     def display_vocab_dataset(cls):
+        """Display vocab dataset from data.json file in resources directory"""
         data = Vocabulary.from_file('../../resources/data.json')[0]
         column1_list = data["Column 1"]
         column2_list = data["Column 2"]
