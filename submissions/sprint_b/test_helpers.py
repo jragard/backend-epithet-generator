@@ -11,7 +11,9 @@ class HelperTests(unittest.TestCase):
 
     def setUp(self):
         data = {
-            "foo": "bar"
+            "Column1": "bar",
+            "Column2": "foo",
+            "Column3": "baz"
         }
 
         if os.path.isdir('temp_dir'):
@@ -33,14 +35,26 @@ class HelperTests(unittest.TestCase):
                          'json')
 
     def test_read_json(self):
-        self.assertEqual(FileManager.read_json(self.path), {"foo": "bar"})
+        self.assertEqual(FileManager.read_json(self.path), {
+            "Column1": "bar",
+            "Column2": "foo",
+            "Column3": "baz"
+        })
         self.assertEqual(type(FileManager.read_json(self.path)), dict)
 
     def test_from_file(self):
-        self.assertEqual(Vocabulary.from_file(self.path), ({"foo": "bar"}, ["foo"]))
+        self.assertEqual(Vocabulary.from_file(self.path), ({
+            "Column1": "bar",
+            "Column2": "foo",
+            "Column3": "baz"
+        }, ["Column1"]))
 
     def test_from_json(self):
-        self.assertEqual(Vocabulary.from_json(self.path), ({"foo": "bar"}, ["foo"]))
+        self.assertEqual(Vocabulary.from_json(self.path), ({
+            "Column1": "bar",
+            "Column2": "foo",
+            "Column3": "baz"
+        }, ["Column1"]))
 
     def test_strategies(self):
         self.assertEqual(Vocabulary.strategies('json'), Vocabulary.from_json)
@@ -70,6 +84,10 @@ class HelperTests(unittest.TestCase):
         quantity = 4
         epithet_list = EpithetGenerator.get_quantity_of_epithets(quantity)
         self.assertTrue(len(epithet_list) == quantity)
+
+    # def test_display_vocab_dataset(self):
+    #     data = Vocabulary.from_file(self.path)
+
 
 # class SadHelperTests(unittest.TestCase):
 

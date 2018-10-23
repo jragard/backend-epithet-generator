@@ -1,6 +1,6 @@
 from __init__ import app
-from flask import request, jsonify
-from helpers import FileManager, Vocabulary, EpithetGenerator
+from flask import jsonify
+from helpers import EpithetGenerator
 
 
 @app.route('/')
