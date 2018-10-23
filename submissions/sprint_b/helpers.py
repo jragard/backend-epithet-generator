@@ -50,12 +50,13 @@ class EpithetGenerator:
     def get_single_epithet(cls):
         data = sorted(Vocabulary.from_file('../../resources/data.json'))
         data_keys = sorted(data[1])
-        
+
         word1 = random.choice(data[0][data_keys[0]])
         word2 = random.choice(data[0][data_keys[1]])
         word3 = random.choice(data[0][data_keys[2]])
 
-        return ([word1, word2, word3], "Thou " + word1 + ", " + word2 + ", " + word3 + "!")
+        return ([word1, word2, word3], "Thou " +
+                word1 + ", " + word2 + ", " + word3 + "!")
 
     @classmethod
     def display_single_epithet(cls):
@@ -78,7 +79,23 @@ class EpithetGenerator:
         data = Vocabulary.from_file('../../resources/data.json')[0]
         column1_list = data["Column 1"]
         column2_list = data["Column 2"]
-        column3_list = data["Column 3"] 
+        column3_list = data["Column 3"]
 
-        return (column1_list, column2_list, column3_list)
+        column1 = []
+        column2 = []
+        column3 = []
 
+        for word in column1_list:
+            encode = word.encode('utf-8')
+            column1.append(encode)
+        for word in column2_list:
+            encode = word.encode('utf-8')
+            column2.append(encode)
+        for word in column3_list:
+            encode = word.encode('utf-8')
+            column3.append(encode)
+
+        format1 = "Column 1: {}".format(column1)
+        format2 = "Column 2: {}".format(column2)
+        format3 = "Column 3: {}".format(column3)
+        return (format1, format2, format3)
