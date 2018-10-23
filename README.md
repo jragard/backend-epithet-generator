@@ -1,14 +1,5 @@
 # Epithet Generator
 
-Create a Flask API to serve random epithets from the [Shakespeare Insult Kit](http://www.pangloss.com/seidel/shake_rule.html).
-Each sprint is an assignment with its own deliverables. Please create a pull request to the appropriate branch to submit
-assignments. 
+In this sprint, we have defined a function named configure_app in the __init__.py file, imported os, dotenv, and flask within this function, defined environment variables, and instantiated an instance of Flask.  
 
-## Instructions
-Sprint|Description|Commit
----|---|---|
-[a](https://github.com/KenzieAcademy/backend-epithet-generator/blob/master/instructions/sprint_a.md)|minimal flask applications|
-[b](https://github.com/KenzieAcademy/backend-epithet-generator/blob/sprint-b/instructions/sprint_b.md) |unit testing|
-| |integration testing|
-| |design patterns|
-| |larger applications|
+Then, in the app.py file, we have imported that app instance from the __init__ file and defined a '/' and '/vocabulary' route to serve data (which will be further fleshed out in future sprints)
