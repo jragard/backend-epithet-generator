@@ -48,9 +48,9 @@ class EpithetGenerator:
 
     @classmethod
     def get_single_epithet(cls):
-        data = Vocabulary.from_file('../../resources/data.json')
+        data = sorted(Vocabulary.from_file('../../resources/data.json'))
         data_keys = sorted(data[1])
-
+        
         word1 = random.choice(data[0][data_keys[0]])
         word2 = random.choice(data[0][data_keys[1]])
         word3 = random.choice(data[0][data_keys[2]])
@@ -82,4 +82,3 @@ class EpithetGenerator:
 
         return (column1_list, column2_list, column3_list)
 
-# EpithetGenerator.display_vocab_dataset()
