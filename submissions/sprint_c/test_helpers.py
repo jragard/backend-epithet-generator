@@ -20,18 +20,18 @@ class HelperTests(unittest.TestCase):
         if os.path.isdir('temp_dir'):
             shutil.rmtree('temp_dir')
             os.mkdir('./temp_dir')
-            with open(self.path, 'w') as test_file:
+            with open('./temp_dir/data.json', 'w') as test_file:
                 json.dump(data, test_file)
         else:
             os.mkdir('./temp_dir')
-            with open(self.path, 'w') as test_file:
+            with open('./temp_dir/data.json', 'w') as test_file:
                 json.dump(data, test_file)
 
     def tearDown(self):
         shutil.rmtree('./temp_dir')
 
     def test_get_extension(self):
-            self.assertEqual(FileManager.get_extension(self.path), 'json')
+        self.assertEqual(FileManager.get_extension(self.path), 'json')
 
     def test_sad_path_get_extension(self):
         try:

@@ -8,4 +8,4 @@ Then, in the app.py file, we have imported that app instance from the __init__ f
 
 In sprint B, I added an EpithetGenerator class with methods to get data for a single epithet, to display that single epithet, to get a user-specified quantity of epithets, and to display the entire vocab dataset contained in the data.json file in this project's 'resources' directory.  Going to '/' displays a single epithet, '/vocabulary' displays the vocab dataset, and '/epithets/<quantity>' displays the specified quantity of epithets.
 
-In sprint C, I have added a method to the EpithetGenerator class that returns a random quantity of epithets.  I have also added a route to serve this random quantity.  I will be writing integration tests for each route using the Flask test client to verify that all the components created are working together as expected.
+In sprint C, I have added a method to the EpithetGenerator class that returns a random quantity of epithets.  I have also added a route to serve this random quantity.  I have written integration tests for each route using the Flask test client to verify that all the components created are working together as expected.

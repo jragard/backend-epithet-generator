@@ -119,10 +119,10 @@ class EpithetGenerator:
         counter = 0
         quantity = random.randint(1, 101)
         epithet_list = []
-        epithet_list.append("Here are " + str(quantity) + " epithets")
+
         while counter < quantity:
             epithet = cls.display_single_epithet()
             epithet_list.append(epithet)
             counter += 1
 
-        return epithet_list
+        return (epithet_list, str(quantity))
