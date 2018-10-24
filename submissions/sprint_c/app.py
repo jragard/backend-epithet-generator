@@ -1,4 +1,4 @@
-from sprint_c import app
+from __init__ import app
 from flask import jsonify
 from helpers import EpithetGenerator
 
@@ -27,4 +27,5 @@ def get_random_quantity():
     return jsonify(epithets)
 
 
-app.run()
+if __name__ == '__main__':
+    app.run()

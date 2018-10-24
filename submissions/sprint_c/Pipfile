@@ -9,6 +9,7 @@ name = "pypi"
 python-dotenv = "*"
 flask = "*"
 flask-testing = "*"
+flask-script = "*"
 
 [requires]
 python_version = "2.7"
